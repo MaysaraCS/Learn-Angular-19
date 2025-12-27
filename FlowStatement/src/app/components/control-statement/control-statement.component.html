@@ -1,1 +1,86 @@
-<p>control-statement works!</p>
+<div class="row">
+  <div class="col-3">
+    @if (div1vissibale) {
+    <div class="bg-success p-3">Div 1</div>
+    }
+  </div>
+
+  <div class="col-3">
+    @if (isChecked) {
+    <div class="bg-primary p-3">Check Box is checked</div>
+    } @else {
+    <div class="bg-danger p-3">Check Box is UnChecked</div>
+    }
+  </div>
+
+  <div class="col-3">
+    @if (dayName == 'mon') {
+    <span>Monday</span>
+    } @else if (dayName == 'tue') {
+    <span>tuesday</span>
+    } @else {
+    <span>enter proper day name</span>
+    }
+  </div>
+</div>
+
+<div class="row pt-4">
+  <div class="col-3">
+    <button class="btn btn-success" (click)="hideShowDiv1(true)">Show</button>
+    <button class="btn btn-danger" (click)="hideShowDiv1(false)">Hide</button>
+  </div>
+
+  <div class="col-3">
+    <input type="checkbox" [(ngModel)]="isChecked" />
+  </div>
+
+  <div class="col-3">
+    <input
+      type="text"
+      [(ngModel)]="dayName"
+      maxlength="5"
+      placeholder="enter day"
+    />
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    <select>
+      @for (item of cityList; track $index) {
+      <option>{{ item }}</option>
+      }
+    </select>
+  </div>
+
+  <div class="col-3">
+    @for (city of cityList; track $index) {
+    <button class="btn btn-success">{{ city }}</button>
+    }
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-5">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>serial number</th>
+          <th>name</th>
+          <th>city</th>
+          <th>mobile no</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of employeeArray; track $index) {
+        <tr>
+          <td>{{ $index + 1 }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.city }}</td>
+          <td>{{ item.contactNumber }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
