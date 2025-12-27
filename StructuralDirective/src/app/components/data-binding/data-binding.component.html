@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-6">
+    1.Interpolation
+    <p>firstName => {{ firstName }}</p>
+    <div>
+      {{ rollNo }}
+    </div>
+    <span>{{ isActive }}</span>
+  </div>
+  <div class="col-6">
+    property binding
+    <input type="text" name="" id="" [value]="firstName" />
+    <br />
+    <input type="text" [placeholder]="myPlaceHolder" name="" id="" />
+    <br />
+    <div [class]="divClassName" style="height: 100px; width: 100px"></div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-3">
+    <button class="btn btn-success" (click)="showWelcomeMessage()">
+      Show welcome
+    </button>
+  </div>
+  <div class="col-3">
+    <select (change)="onTestChnage()">
+      <option value="test1">Test1</option>
+      <option value="test2">Test2</option>
+      <option value="test3">Test3</option>
+      <option value="test4">Test4</option>
+    </select>
+  </div>
+</div>
+<div class="row">
+  <div class="col-3">
+    <input type="text" [(ngModel)]="firstName" />
+  </div>
+  <div class="col-3">
+    <select [(ngModel)]="selectedTest">
+      <option value="test1">Test1</option>
+      <option value="test2">Test2</option>
+      <option value="test3">Test3</option>
+      <option value="test4">Test4</option>
+    </select>
+    -{{ selectedTest }}
+  </div>
+</div>
