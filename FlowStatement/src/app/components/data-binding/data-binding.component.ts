@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-data-binding',
@@ -17,12 +18,15 @@ export class DataBindingComponent {
   divClassName: string = "bg-primary";
   selectedTest: string = "";
 
-  constructor(){
+  constructor(private router: Router){
     console.log(this.firstName);
 
     this.isActive = false;
     console.log(this.isActive);
     //this.showWelcomeMessage();
+  }
+  navigateToAdmin(){
+    this.router.navigateByUrl("/admin");
   }
 
   showWelcomeMessage(){
